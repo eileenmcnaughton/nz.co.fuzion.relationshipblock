@@ -76,7 +76,8 @@ function relationshipblock_civicrm_managed(&$entities) {
  * is installed, disabled, uninstalled.
  */
 function relationshipblock_civicrm_pageRun(&$page ) {
-  $page->assign('rels', '2');
+  $page->assign('rels', '10');
+  $page->assign('rel_contact', 'contact_id_b');
     CRM_Core_Region::instance('contact-basic-info-left')->add(array(
    //'markup' => '<p>Congratulations! You won the lottery!</p>',
     'template' => "RelationshipBlock.tpl"
