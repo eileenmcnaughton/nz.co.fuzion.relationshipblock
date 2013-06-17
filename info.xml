@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <extension key="nz.co.fuzion.relationshipblock" type="module">
   <file>relationshipblock</file>
-  <name>FIXME</name>
-  <description>FIXME</description>
-  <license>FIXME</license>
+  <name>Relationship Block</name>
+  <description>Adds tpl to relationship tab</description>
+  <license>AGPL</license>
   <maintainer>
-    <author>FIXME</author>
-    <email>FIXME@example.com</email>
+    <author>Eileen</author>
+    <email>eileen@fuzion.co.nz</email>
   </maintainer>
   <releaseDate>2013-03-06</releaseDate>
   <version>1.0</version>
@@ -14,7 +14,7 @@
   <compatibility>
     <ver>4.2</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments>This module requires regions to be defined in summary.tpl. Still to do is a setting to specify desired relationship types</comments>
   <civix>
     <namespace>CRM/Relationshipblock</namespace>
   </civix>
