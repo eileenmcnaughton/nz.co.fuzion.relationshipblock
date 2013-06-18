@@ -76,7 +76,7 @@ function relationshipblock_civicrm_managed(&$entities) {
  * is installed, disabled, uninstalled.
  */
 function relationshipblock_civicrm_pageRun(&$page ) {
-  $page->assign('rels', "4,10,11,12,13,14,15,18,20,21,23,24,25,26,29,30,31,32,33,34,38");
+  $page->assign('rels', "4,10,11,12,13,14,15,18,20,21,23,24,25,26,29,30,31,32,33,34,35,38");
   CRM_Core_Region::instance('contact-basic-info-left')->add(array(
     'template' => "RelationshipBlock.tpl"
   ));
