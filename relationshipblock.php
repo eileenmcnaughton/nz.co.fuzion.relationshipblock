@@ -75,8 +75,25 @@ function relationshipblock_civicrm_managed(&$entities) {
  * Generate a list of entities to create/deactivate/delete when this module
  * is installed, disabled, uninstalled.
  */
-function relationshipblock_civicrm_pageRun(&$page ) {
-  $page->assign('rels', "4,10,11,12,13,14,15,18,20,21,23,24,25,26,29,30,31,32,33,34,35,38");
+function relationshipblock_civicrm_pageRun(&$page) {
+  if(($contactID = $page->getVar('_contactId')) != FALSE) {
+    try{
+      $contactType = civicrm_api3('contact', 'getvalue', array('id' => $contactID, 'return' => 'contact_type'));
+
+    }
+    catch(Exception $e) {
+      // oohhh we have an error
+    }
+  }
+
+  if($contactType == 'Organization') {
+    $relationshipsOfInterest = array(10,11,12,13,14,15,18,20,21,23,24,25,26,29,30,31,32,33,34,38);
+  }
+  else {
+    $relationshipsOfInterest = array(4,10,11,12,13,14,15,18,20,21,23,24,25,26,29,30,31,32,33,34,38);
+  }
+  $page->assign('rels', implode(',', $relationshipsOfInterest));
+
   CRM_Core_Region::instance('contact-basic-info-left')->add(array(
     'template' => "RelationshipBlock.tpl"
   ));
