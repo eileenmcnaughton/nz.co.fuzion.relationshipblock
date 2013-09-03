@@ -27,7 +27,7 @@
   {/if}
   {if $relationdesc}
     <table>
-          {$relationdesc|substr:0:-1}
+          {$relationdesc}
         </td>
       </tr>
     </table>
