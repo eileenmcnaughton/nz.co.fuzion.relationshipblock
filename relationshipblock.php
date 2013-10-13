@@ -76,6 +76,7 @@ function relationshipblock_civicrm_managed(&$entities) {
  * is installed, disabled, uninstalled.
  */
 function relationshipblock_civicrm_pageRun(&$page) {
+  //@todo check pagename & return if not contact summary page 
   if(($contactID = $page->getVar('_contactId')) != FALSE) {
     try{
       $contactType = civicrm_api3('contact', 'getvalue', array('id' => $contactID, 'return' => 'contact_type'));
@@ -84,6 +85,9 @@ function relationshipblock_civicrm_pageRun(&$page) {
     catch(Exception $e) {
       // oohhh we have an error
     }
+  }
+  else {
+    return;
   }
 
   if($contactType == 'Organization') {
